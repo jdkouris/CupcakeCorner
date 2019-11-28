@@ -16,4 +16,8 @@ public func routes(_ router: Router) throws {
             return req.redirect(to: "/")
         }
     }
+    
+    router.get("cupcakes") { req -> Future<[Cupcake]> in
+        return Cupcake.query(on: req).sort(\.name).all()
+    }
 }
