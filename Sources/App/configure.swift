@@ -32,5 +32,6 @@ public func configure(
     
     var migrationConfig = MigrationConfig()
     migrationConfig.add(model: Cupcake.self, database: .sqlite)
+    migrationConfig.add(model: Order.self, database: .sqlite)
     services.register(migrationConfig)
 }
